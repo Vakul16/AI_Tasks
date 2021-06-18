@@ -1,1 +1,1 @@
-### Tasks on jQuery & CSS
+### Technologies used jQuery, HTML & CSS
