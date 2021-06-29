@@ -1,0 +1,66 @@
+/* :root {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+} */
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.heading {
+  width: 70%;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+.gender-container {
+  display: flex;
+  flex-direction: column;
+}
+.sponsers-container {
+  display: flex;
+  flex-direction: column;
+}
+.study-container {
+  display: flex;
+  flex-direction: column;
+}
+.accepts-container {
+  display: flex;
+  flex-direction: column;
+}
+.buttons {
+  display: flex;
+}
+.btn-reset {
+  color: #0180a6;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-right: 10px;
+}
+.btn-apply {
+  color: #fff;
+  background-color: #0180a6;
+  border-color: #0180a6;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  border: 1px solid #0180a6;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.btn-apply:hover {
+  background-color: #01455a;
+}
+/* font-family: "Merriweather",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
