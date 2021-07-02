@@ -5,13 +5,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Gender from "./TabPanels/Gender";
-import Phase from "./TabPanels/Phase";
-import StudyType from "./TabPanels/StudyType";
-import Sponsers from "./TabPanels/Sponsers";
-import AcceptsHealthy from "./TabPanels/AcceptsHealthy";
-import NewTrials from "./TabPanels/NewTrials";
 import PostData from "../JSONData";
+import TabPanelsNew from "./TabPanelsNew";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -75,23 +70,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#edfbff",
   },
 }));
-
-const TAB_DATA = [
-  { id: 0, label: "Gender" },
-  { id: 1, label: "Phase" },
-  { id: 2, label: "Study Type" },
-  { id: 3, label: "Sponsors" },
-  { id: 4, label: "Accepts healthy volunteers" },
-  { id: 5, label: "New/Updated Trials" },
-];
-
-export default function AdvanceFilters() {
+export default function AdvanceFilters2() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  console.log(PostData[0].details);
   return (
     <>
       {/* <h3 className="heading">Advance Filters</h3> */}
@@ -111,39 +97,27 @@ export default function AdvanceFilters() {
             },
           }}
         >
-          {TAB_DATA.map(({ label, id }) => (
+          {PostData.map(({ name, id }) => (
             <Tab
               classes={{
                 wrapper: classes.wrapper,
                 selected: classes.selected,
               }}
-              label={`${label}`}
+              label={`${name}`}
               {...a11yProps(id)}
             />
           ))}
         </Tabs>
         <TabPanel value={value} index={0}>
-          <Gender />
+          <TabPanelsNew details={PostData[0].details} />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <Phase />
+          <TabPanelsNew details={PostData[1].details} />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <StudyType />
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <Sponsers />
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          <AcceptsHealthy />
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          <NewTrials />
+          <TabPanelsNew details={PostData[2].details} />
         </TabPanel>
       </div>
-      {/* {PostData.map((data, index) => {
-            return <h1>{data.name}</h1>;
-          })} */}
       <div className="buttons">
         <button className="btn-reset">Reset</button>
         <button className="btn-apply">Apply</button>

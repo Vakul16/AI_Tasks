@@ -12,20 +12,26 @@
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  font-family: "Merriweather", serif;
 }
 .heading {
   width: 70%;
-  font-weight: 600;
+  font-weight: 200;
   color: #333;
   text-align: left;
 }
 .gender-container {
   display: flex;
   flex-direction: column;
+  /* font-family: 'Merriweather'; */
 }
 .sponsers-container {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  width: 353px;
+  height: 396px;
+  /* font-family: 'Merriweather', serif; */
 }
 .study-container {
   display: flex;
@@ -37,28 +43,31 @@
 }
 .buttons {
   display: flex;
+  margin-top: 20px;
 }
 .btn-reset {
   color: #0180a6;
   font-size: 1rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   cursor: pointer;
   background: none;
   border: none;
   margin-right: 10px;
+  font-family: "Merriweather", serif;
 }
 .btn-apply {
   color: #fff;
   background-color: #0180a6;
   border-color: #0180a6;
   font-size: 1rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   padding: 0.7rem 1.5rem;
   cursor: pointer;
   border: 1px solid #0180a6;
   border-radius: 5px;
   margin-left: 10px;
   transition: all 0.3s ease-out;
+  font-family: "Merriweather", serif;
 }
 .btn-apply:hover {
   background-color: #01455a;
