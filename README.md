@@ -1,1 +1,3 @@
-### Technologies used jQuery, HTML & CSS
+## Technologies used: 
+
+### React, JavaScript, jQuery, HTML & CSS, Material-UI
