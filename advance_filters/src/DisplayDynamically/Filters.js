@@ -5,8 +5,9 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import PostData from "../JSONData";
+import PostData from "../JSONData2";
 import TabPanelsNew from "./TabPanelsNew";
+import TreeChecked2 from "../DisplayDynamically/TreeChecked";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -70,14 +71,24 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#edfbff",
   },
 }));
-export default function AdvanceFilters2() {
+export default function Filters() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [filterValue, setFilterValue] = React.useState({
+    Level_1: PostData[0],
+    Level_2: PostData[1],
+    Portfolio: PostData[2],
+  });
+  console.log(PostData[0].details);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  console.log(PostData[0].details);
+  const handleChangeState = (name, newValue) => {
+    setFilterValue((prevState) => ({ ...prevState }));
+  };
+  console.log(filterValue);
+  // console.log(PostData[0].details);
   return (
     <>
       {/* <h3 className="heading">Advance Filters</h3> */}
@@ -109,13 +120,14 @@ export default function AdvanceFilters2() {
           ))}
         </Tabs>
         <TabPanel value={value} index={0}>
-          <TabPanelsNew details={PostData[0].details} />
+          {/* <TabPanelsNew details={filterValue.Level_1.details} /> */}
+          <TreeChecked2 initialState={PostData[0].details} />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <TabPanelsNew details={PostData[1].details} />
+          <TreeChecked2 initialState={PostData[1].details} />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <TabPanelsNew details={PostData[2].details} />
+          <TreeChecked2 initialState={PostData[2].details} />
         </TabPanel>
       </div>
       <div className="buttons">

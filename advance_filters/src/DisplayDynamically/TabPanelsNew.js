@@ -57,27 +57,20 @@ const RadioButton = ({ name, value }) => {
   );
 };
 
-const CheckBox = ({ label }) => {
+const CheckBox = ({ label, value, handleChange }) => {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    male: false,
-    female: false,
-    any: false,
-    telangana: false,
-    maharashtra: false,
-    delhi: false,
-  });
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
+
+  // const handleChange = (event) => {
+  //   setState({ ...state, [event.target.name]: event.target.checked });
+  // };
 
   return (
     <FormControlLabel
       control={
         <Checkbox
           className={classes.label}
-          checked={state.telangana}
-          onChange={handleChange}
+          checked={value}
+          onChange={() => handleChange(label, value)}
           // checked={true}
           color="primary"
         />
@@ -107,28 +100,29 @@ const AccordionBox = ({ name, details }) => {
     </Accordion>
   );
 };
-const TabPanelsNew = ({ details }) => {
+const TabPanelsNew = ({ details, handleChange }) => {
   const classes = useStyles();
-  // const [state, setState] = React.useState({
-  //   male: false,
-  //   female: false,
-  //   any: false,
-  //   telangana: false,
-  //   maharashtra: false,
-  //   delhi: false,
-  // });
-  // const handleChange = (event) => {
-  //   setState({ ...state, [event.target.name]: event.target.checked });
-  // };
-
   console.log(details);
   return (
     <div className={classes.root}>
+      {/* {details.length > 0 ? (
+        <TabPanelsNew details={details.details} />
+      ) : (
+        <CheckBox />
+      )} */}
       {details.map((data) => {
         if (data.details.length > 0) {
           return <AccordionBox name={data.name} details={data.details} />;
         } else {
-          return <CheckBox label={data.name} />;
+          return (
+            <CheckBox
+              value={data.value}
+              label={data.name}
+              handleChange={() => {
+                handleChange(data.name, data.value);
+              }}
+            />
+          );
         }
       })}
     </div>
