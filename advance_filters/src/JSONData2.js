@@ -11,7 +11,7 @@ const PostData = [
         children: [
           {
             label: "Property1",
-            isChecked: false.valueOf,
+            isChecked: false,
             children: [
               { label: "Property1", isChecked: false },
               { label: "Property2", isChecked: false },

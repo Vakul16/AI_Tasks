@@ -120,14 +120,13 @@ export default function Filters() {
           ))}
         </Tabs>
         <TabPanel value={value} index={0}>
-          {/* <TabPanelsNew details={filterValue.Level_1.details} /> */}
-          <TreeChecked2 initialState={PostData[0].details} />
+          <TabPanelsNew data={PostData[0].details} />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <TreeChecked2 initialState={PostData[1].details} />
+          <TabPanelsNew data={PostData[1].details} />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <TreeChecked2 initialState={PostData[2].details} />
+          <TabPanelsNew data={PostData[2].details} />
         </TabPanel>
       </div>
       <div className="buttons">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -8,6 +8,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import Radio from "@material-ui/core/Radio";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import { Tree } from "react-rainbow-components";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -100,32 +103,64 @@ const AccordionBox = ({ name, details }) => {
     </Accordion>
   );
 };
-const TabPanelsNew = ({ details, handleChange }) => {
-  const classes = useStyles();
-  console.log(details);
+// const TabPanelsNew = ({ data = [] }) => {
+//   // const [childVisible, setChildVisiblity] = useState(false);
+//   // const hasChild = (data) => (data.children ? true : false);
+//   console.log(data);
+//   return (
+//     <div>
+//       <ul>
+//         {data.map((tree) => (
+//           <TreeNode node={tree} />
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+const TabPanelsNew = ({ data = [] }) => {
   return (
-    <div className={classes.root}>
-      {/* {details.length > 0 ? (
-        <TabPanelsNew details={details.details} />
-      ) : (
-        <CheckBox />
-      )} */}
-      {details.map((data) => {
-        if (data.details.length > 0) {
-          return <AccordionBox name={data.name} details={data.details} />;
-        } else {
-          return (
-            <CheckBox
-              value={data.value}
-              label={data.name}
-              handleChange={() => {
-                handleChange(data.name, data.value);
-              }}
-            />
-          );
-        }
-      })}
+    <div className="d-tree">
+      <ul className="d-flex d-tree-container flex-column">
+        {data.map((tree) => (
+          <TreeNode node={tree} />
+        ))}
+      </ul>
     </div>
   );
 };
+const TreeNode = ({ node }) => {
+  const [childVisible, setChildVisiblity] = useState(false);
+  const hasChild = node.children ? true : false;
+  console.log(node);
+  return (
+    <li className="d-tree-node border-0">
+      <div className="d-flex" onClick={(e) => setChildVisiblity((v) => !v)}>
+        {hasChild && (
+          <div
+            className={`d-inline d-tree-toggler ${
+              childVisible ? "active" : ""
+            }`}
+          >
+            <FontAwesomeIcon icon={faCaretRight} />
+          </div>
+        )}
+
+        <div className="col d-tree-head">
+          <i className={`mr-1 ${node.icon}`}> </i>
+          <input type="checkbox"></input>
+          {node.label}
+        </div>
+      </div>
+
+      {hasChild && childVisible && (
+        <div className="d-tree-content">
+          <ul className="d-flex d-tree-container flex-column">
+            <TabPanelsNew data={node.children} />
+          </ul>
+        </div>
+      )}
+    </li>
+  );
+};
+
 export default TabPanelsNew;

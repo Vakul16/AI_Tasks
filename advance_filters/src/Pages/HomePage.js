@@ -15,10 +15,10 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <h5 className="heading">Advance Filters</h5> */}
+      <h5 className="heading">Advance Filters</h5>
       {/* <AdvanceFilters /> */}
-      <RecursiveFilter data={treeData} />
-      {/* <Filters /> */}
+      {/* <RecursiveFilter data={treeData} /> */}
+      <Filters />
       {/* <MovieProvider>
         <AddMovie />
         <MovieList />
