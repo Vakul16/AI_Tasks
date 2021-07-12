@@ -1,3 +1,3 @@
 ## Technologies used: 
 
-### React, JavaScript, jQuery, HTML & CSS, Material-UI
+### React, JavaScript, jQuery, HTML & CSS, Material-UI, Font Awesome
