@@ -4,7 +4,7 @@ const Table = () => {
   return (
     <>
       <div className="table">
-        <table>
+        <table className="content-table">
           <thead>
             <th>Questions</th>
             <th>Type</th>
@@ -14,12 +14,16 @@ const Table = () => {
             <tr>
               <td>
                 <input type="checkbox" id="checkbox-input1" />
+              </td>
+              <td>
                 <label for="checkbox-input1">
                   Are you above 18 years of age?
                 </label>
               </td>
               <td>
                 <input type="radio" id="radio-input1" /> 
+              </td>
+              <td>
                 <label for="radio-input1">Multiple Choice</label>
               </td>
               <td>Yes, No</td>
@@ -27,6 +31,8 @@ const Table = () => {
             <tr>
               <td>
                 <input type="checkbox" id="checkbox-input2" />
+              </td>
+              <td>
                 <label for="checkbox-input2">What is your gender?</label>
               </td>
               <td>
@@ -38,6 +44,8 @@ const Table = () => {
             <tr>
               <td>
                 <input type="checkbox" id="checkbox-input3" />
+              </td>
+              <td>
                 <label for="checkbox-input3">
                   Are you taking any medication for diabetes?
                 </label>
@@ -51,6 +59,8 @@ const Table = () => {
             <tr>
               <td>
                 <input type="checkbox" id="checkbox-input4" />
+              </td>
+              <td>
                 <label for="checkbox-input4">How old are you?</label>
               </td>
               <td>
@@ -61,6 +71,8 @@ const Table = () => {
             <tr>
               <td>
                 <input type="checkbox" id="checkbox-input5" />
+              </td>
+              <td>
                 <label for="checkbox-input5">
                   What medications do you take?
                 </label>
@@ -74,6 +86,8 @@ const Table = () => {
             <tr>
               <td>
                 <input type="checkbox" id="checkbox-input6" />
+              </td>
+              <td>
                 <label for="checkbox-input6">Explain your condition</label>
               </td>
               <td>
@@ -84,6 +98,8 @@ const Table = () => {
             <tr>
               <td>
                 <input type="checkbox" id="checkbox-input7" />
+              </td>
+              <td>
                 <label for="checkbox-input7">What is your weight?</label>
               </td>
               <td>

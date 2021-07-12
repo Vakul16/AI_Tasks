@@ -5,10 +5,12 @@ import Table from "./Table";
 
 const DataTable = () => {
   return (
-    <div className = "main">
+    <div className="container">
       <h2>Import questions</h2>
-      <Search />
-      <Button />
+      <div className="search-container">
+        <Search />
+        <Button />
+      </div>
       <Table />
     </div>
   );

@@ -1,12 +1,12 @@
-import React from 'react'
-import DataTable from '../Components/DataTable'
+import React from "react";
+import DataTable from "../Components/DataTable";
 
 const HomePage = () => {
-    return (
-        <div>
-            <DataTable />
-        </div>
-    )
-}
+  return (
+    <>
+      <DataTable />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;
