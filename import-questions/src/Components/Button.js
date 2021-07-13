@@ -5,7 +5,7 @@ const Button = () => {
     <div className="btn">
       <button>
         <i className="fas fa-plus-circle"></i>
-        Add selected questions
+        Add 3 selected questions
       </button>
     </div>
   );
